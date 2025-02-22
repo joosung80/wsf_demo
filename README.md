@@ -77,7 +77,7 @@ npm start
 
 3. 백엔드 배포
 ```bash
-cd backend
+cd backend     
 npm install
 cdk deploy
 ```

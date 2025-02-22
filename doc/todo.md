@@ -4,7 +4,30 @@
 
 ### 오늘의 작업 내역
 - 설계 문서 작성 및 초기 설정 완료
-- 다음 작업: 프론트엔드 개발 환경 구성 예정
+- 개발 전략 변경: 프론트엔드 우선 개발, 목업 데이터 사용
+
+### 완료된 작업 ✅
+- React 프로젝트 초기 설정
+  - Create React App + TypeScript 프로젝트 생성
+  - Material-UI, React Query, React Router, Axios 설치
+  - 프로젝트 구조 설정
+- 목업 데이터 구현
+  - Todo 타입 정의
+  - 목업 데이터 생성
+  - 목업 API 서비스 구현
+
+### 다음 작업 📝
+- UI 컴포넌트 구현
+  - TodoList 컴포넌트
+  - TodoItem 컴포넌트
+  - AddTodoForm 컴포넌트
+
+### 프론트엔드 개발 순서
+1. 프로젝트 초기 설정 (React + TypeScript)
+2. 목업 데이터 구조 정의
+3. UI 컴포넌트 구현
+4. 상태 관리 및 목업 API 구현
+5. GitHub Pages 배포 설정
 
 ## 1. 🎯 프로젝트 초기 설정
 - [x] GitHub 저장소 생성
