@@ -59,7 +59,8 @@
 - AWS CDK CLI
 - Git
 
-### 로컬 개발 환경 설정
+### 로컬 개발 환경 설정? Where do you use GitHub?  [Use arrows to move, type to filter]
+> GitHub.com
 
 1. 저장소 클론
 ```bash
@@ -145,6 +146,65 @@ GitHub Flow를 사용하여 간단하고 효율적인 브랜치 관리를 합니
 3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## 📔 시스템 시퀀스
+
+### TODO 작성 및 저장
+```mermaid
+sequenceDiagram
+    actor User
+    participant React as React App
+    participant API as API Gateway
+    participant Lambda as Lambda Function
+    participant DynamoDB as DynamoDB
+
+    User->>React: TODO 작성
+    React->>API: POST /todos
+    API->>Lambda: 요청 전달
+    Lambda->>DynamoDB: TODO 저장
+    DynamoDB-->>Lambda: 저장 완료
+    Lambda-->>API: 성공 응답
+    API-->>React: 201 Created
+    React-->>User: UI 업데이트
+```
+
+### TODO 목록 조회
+```mermaid
+sequenceDiagram
+    actor User
+    participant React as React App
+    participant API as API Gateway
+    participant Lambda as Lambda Function
+    participant DynamoDB as DynamoDB
+
+    User->>React: 목록 조회
+    React->>API: GET /todos
+    API->>Lambda: 요청 전달
+    Lambda->>DynamoDB: 목록 조회
+    DynamoDB-->>Lambda: 데이터 반환
+    Lambda-->>API: TODO 목록
+    API-->>React: 200 OK
+    React-->>User: 목록 표시
+```
+
+### TODO 상태 변경
+```mermaid
+sequenceDiagram
+    actor User
+    participant React as React App
+    participant API as API Gateway
+    participant Lambda as Lambda Function
+    participant DynamoDB as DynamoDB
+
+    User->>React: 상태 변경 클릭
+    React->>API: PUT /todos/{id}
+    API->>Lambda: 요청 전달
+    Lambda->>DynamoDB: 상태 업데이트
+    DynamoDB-->>Lambda: 업데이트 완료
+    Lambda-->>API: 성공 응답
+    API-->>React: 200 OK
+    React-->>User: UI 업데이트
+```
 
 ## 📝 라이선스
 
